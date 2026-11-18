@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fabric Mods for Minecraft 26.3</title>
+  <meta name="description" content="Two small Fabric mods for Minecraft Java 26.3: Minecraft Mob Probing and Inventory Sorter. Free downloads.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Fabric &middot; Minecraft Java 26.3</p>
+      <h1>Two small mods.<br>One makes the game harder, one makes it tidier.</h1>
+      <p class="lead">Free, open source, and built for Fabric. Download the jar, drop it in your <code>mods</code> folder, and play.</p>
+      <p class="hero-links">
+        <a class="btn" href="#mob-probing">Mob Probing</a>
+        <a class="btn ghost" href="#inventory-sorter">Inventory Sorter</a>
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="mob-probing" class="card">
+      <div class="card-head">
+        <h2>Minecraft Mob Probing</h2>
+        <span class="tag">Gameplay &middot; Server &amp; singleplayer</span>
+      </div>
+      <p>Every hostile mob within <strong>200 blocks</strong> of you starts hunting you. No more quiet nights: zombies, skeletons, spiders and the rest all head straight for your position.</p>
+      <ul>
+        <li>Checks once per second and steers mobs towards the nearest player</li>
+        <li>Mobs within 40 blocks also lock on and attack</li>
+        <li>Players in Creative or Spectator mode are ignored</li>
+        <li>Pathfinds in short hops, so it works over long distances</li>
+      </ul>
+      <p class="note">Mobs only move in loaded chunks. Raise <em>Simulation Distance</em> to 13 or more in Video Settings to reach the full 200 blocks. On a multiplayer server, install it on the server.</p>
+      <p><a class="btn" href="downloads/minecraft-mob-probing-1.0.0.jar" download>Download v1.0.0</a></p>
+    </section>
+
+    <section id="inventory-sorter" class="card">
+      <div class="card-head">
+        <h2>Inventory Sorter</h2>
+        <span class="tag">Quality of life &middot; Client-side</span>
+      </div>
+      <p>One click sorts your inventory, chests, barrels, ender chests and shulker boxes. It runs entirely on your own client with ordinary slot clicks, so it works on <strong>any server</strong> without the server installing anything.</p>
+      <ul>
+        <li>A <strong>Sort</strong> button on every chest, barrel and your inventory screen</li>
+        <li>Merges partial stacks, then sorts alphabetically with the biggest stacks first</li>
+        <li>Keyboard shortcut: <kbd>R</kbd> sorts the container, <kbd>Shift</kbd> + <kbd>R</kbd> sorts your inventory (rebindable in Controls)</li>
+        <li>Clicks are spread over a few ticks so servers do not flag you for spam</li>
+        <li>Never touches your hotbar, armor or offhand</li>
+      </ul>
+      <p><a class="btn" href="downloads/inventory-sorter-1.0.0.jar" download>Download v1.0.0</a></p>
+    </section>
+
+    <section class="install">
+      <h2>How to install</h2>
+      <ol>
+        <li>Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> <strong>0.20.1</strong> or newer for Minecraft <strong>26.3</strong> (most launchers can do this for you).</li>
+        <li>Download <a href="https://modrinth.com/mod/fabric-api">Fabric API</a> for 26.3 and put it in your <code>mods</code> folder.</li>
+        <li>Download the mod jars above and put them in the same <code>mods</code> folder.</li>
+        <li>Start the game using your Fabric profile.</li>
+      </ol>
+      <p class="note">Requires Minecraft Java Edition 26.3 and Fabric API. These are early releases: if you hit a bug, please <a href="https://github.com/finlayharris888/minecraft-mods/issues">open an issue</a>.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Source code and issues on <a href="https://github.com/finlayharris888/minecraft-mods">GitHub</a>. MIT licensed.</p>
+    <p class="small">Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "mobprobing",
+  "version": "${version}",
+  "name": "Minecraft Mob Probing",
+  "description": "All hostile mobs within 200 blocks of a player are drawn towards them, making the game much harder.",
+  "authors": ["finlayharris888"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.mobprobing.MobProbingMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
