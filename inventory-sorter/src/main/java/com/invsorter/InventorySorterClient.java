@@ -187,6 +187,7 @@ public class InventorySorterClient implements ClientModInitializer {
             stacks[i] = menu.slots.get(region.get(i)).getItem().copy();
         }
 
+        buildCreativeOrder(client);
         List<Click> plan = plan(stacks, region);
         LOGGER.info("Sort plan: {} clicks", plan.size());
         if (plan.isEmpty()) return;
@@ -256,9 +257,47 @@ public class InventorySorterClient implements ClientModInitializer {
         return out;
     }
 
-    /** Alphabetical by item name, then biggest stacks first. */
+    // ---- smart ordering ----------------------------------------------------------
+
+    /** Position of each item in the creative inventory (blocks, tools, combat, food, ...). */
+    private static java.util.Map<net.minecraft.world.item.Item, Integer> creativeOrder;
+
+    private static void buildCreativeOrder(Minecraft client) {
+        if (creativeOrder != null) return;
+        java.util.Map<net.minecraft.world.item.Item, Integer> order = new java.util.HashMap<>();
+        try {
+            var conn = client.getConnection();
+            if (conn != null) {
+                net.minecraft.world.item.CreativeModeTabs.tryRebuildTabContents(
+                        conn.enabledFeatures(), false, conn.registryAccess());
+            }
+            int index = 0;
+            for (var tab : net.minecraft.world.item.CreativeModeTabs.allTabs()) {
+                if (tab.getType() != net.minecraft.world.item.CreativeModeTab.Type.CATEGORY) continue;
+                for (ItemStack stack : tab.getDisplayItems()) {
+                    order.putIfAbsent(stack.getItem(), index++);
+                }
+            }
+        } catch (Throwable t) {
+            LOGGER.warn("Could not read creative tab order, falling back to name order", t);
+        }
+        LOGGER.info("Smart sort order built for {} items", order.size());
+        if (!order.isEmpty()) creativeOrder = order;
+    }
+
+    private static int orderOf(ItemStack s) {
+        if (creativeOrder == null) return Integer.MAX_VALUE;
+        return creativeOrder.getOrDefault(s.getItem(), Integer.MAX_VALUE - 1);
+    }
+
+    /**
+     * Smart order: follows the creative inventory, so related things sit together
+     * (stone with stone bricks, tools with tools, food with food). Items not in any tab
+     * go last by name. Within the same item: by name, then biggest stacks first.
+     */
     private static final Comparator<ItemStack> STACK_ORDER = Comparator
-            .comparing((ItemStack s) -> s.getHoverName().getString().toLowerCase())
+            .comparingInt(InventorySorterClient::orderOf)
             .thenComparing(s -> s.getItem().toString())
+            .thenComparing(s -> s.getHoverName().getString().toLowerCase())
             .thenComparing(Comparator.comparingInt(ItemStack::getCount).reversed());
 }

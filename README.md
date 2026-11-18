@@ -5,7 +5,7 @@ Small Fabric mods for **Minecraft Java 26.3** (Fabric Loader 0.20.1+, Fabric API
 | Folder | Mod | Side |
 | --- | --- | --- |
 | [`mob-probing`](mob-probing) | **Minecraft Mob Probing**: hostile mobs within 200 blocks hunt the player | Server / singleplayer |
-| [`inventory-sorter`](inventory-sorter) | **Inventory Sorter**: Sort button for inventory, chests and barrels | Client only |
+| [`inventory-sorter`](inventory-sorter) | **Inventory Sorter**: Smart Sort button for inventory, chests and barrels | Client only |
 | [`web`](web) | Website with downloads, published with GitHub Pages | |
 
 Downloads: see the website, or the jars in [`web/downloads`](web/downloads).
