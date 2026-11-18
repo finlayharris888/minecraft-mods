@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "bigstacks",
+  "version": "${version}",
+  "name": "Big Stacks",
+  "description": "Stackable items stack up to 999 instead of 64, in your inventory, chests, barrels and everywhere else.",
+  "authors": ["finlayharris888"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.bigstacks.BigStacksMod"]
+  },
+  "mixins": ["bigstacks.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

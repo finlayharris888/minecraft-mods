@@ -6,6 +6,26 @@
  */
 window.MODS = [
   {
+    id: "big-stacks",
+    name: "Big Stacks",
+    icon: "assets/icon-stack.svg",
+    tagline: "Stack up to 999 instead of 64.",
+    description:
+      "Every item that normally stacks now stacks to 999, in your inventory, chests, barrels, shulker boxes and hoppers. Items that never stack, like tools and armor, stay as they are. Install it on both the client and the server.",
+    features: [
+      "Stacks of 999 for blocks, food, ores, ender pearls and more",
+      "Works in every container, not just your inventory",
+      "Big stacks save and load safely, even inside shulker boxes",
+      "Pairs well with Inventory Sorter",
+    ],
+    side: "Client and server",
+    version: "1.0.0",
+    minecraft: "26.3",
+    updated: "2026-11-18",
+    download: "downloads/big-stacks-1.0.0.jar",
+    source: "https://github.com/finlayharris888/minecraft-mods/tree/main/big-stacks",
+  },
+  {
     id: "inventory-sorter",
     name: "Inventory Sorter",
     icon: "assets/icon-chest.svg",
