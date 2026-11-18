@@ -6,3 +6,6 @@ build/
 run/
 .DS_Store
 out/
+
+# local tooling
+.claude/

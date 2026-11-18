@@ -3,71 +3,71 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fabric Mods for Minecraft 26.3</title>
-  <meta name="description" content="Two small Fabric mods for Minecraft Java 26.3: Minecraft Mob Probing and Inventory Sorter. Free downloads.">
+  <title>Pickaxe Lab Mods</title>
+  <meta name="description" content="Free Fabric mods for Minecraft Java 26.3: Inventory Sorter and Mob Probing, with more on the way.">
+  <link rel="icon" href="assets/icon-pick.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Fabric &middot; Minecraft Java 26.3</p>
-      <h1>Two small mods.<br>One makes the game harder, one makes it tidier.</h1>
-      <p class="lead">Free, open source, and built for Fabric. Download the jar, drop it in your <code>mods</code> folder, and play.</p>
-      <p class="hero-links">
-        <a class="btn" href="#mob-probing">Mob Probing</a>
-        <a class="btn ghost" href="#inventory-sorter">Inventory Sorter</a>
-      </p>
+  <header class="sky">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="moon" aria-hidden="true"></div>
+    <nav class="top">
+      <a class="brand" href="#"><img src="assets/icon-pick.svg" alt="">Pickaxe Lab</a>
+      <a href="https://github.com/finlayharris888/minecraft-mods">GitHub</a>
+    </nav>
+
+    <div class="title">
+      <div class="logo-wrap">
+        <h1 class="logo">Pickaxe Lab</h1>
+        <button id="splash" class="splash" type="button" title="Click for another splash">Now with 200 blocks of trouble!</button>
+      </div>
+      <p class="sub">Free Fabric mods for Minecraft Java Edition 26.3. Drop the jar in your mods folder and play.</p>
+      <div class="hero-actions">
+        <a class="mc-btn wide" href="#mods">Browse mods</a>
+        <a class="mc-btn wide" href="#install">How to install</a>
+      </div>
     </div>
+
+    <div class="hotbar-wrap">
+      <div id="hotbar" class="hotbar" role="list" aria-label="Mods"></div>
+    </div>
+    <div class="grass" aria-hidden="true"></div>
   </header>
 
-  <main class="wrap">
-    <section id="mob-probing" class="card">
-      <div class="card-head">
-        <h2>Minecraft Mob Probing</h2>
-        <span class="tag">Gameplay &middot; Server &amp; singleplayer</span>
+  <main class="dirt">
+    <section id="mods" class="section">
+      <div class="section-head">
+        <h2>Mods</h2>
+        <p id="mod-count" class="count"></p>
       </div>
-      <p>Every hostile mob within <strong>200 blocks</strong> of you starts hunting you. No more quiet nights: zombies, skeletons, spiders and the rest all head straight for your position.</p>
-      <ul>
-        <li>Checks once per second and steers mobs towards the nearest player</li>
-        <li>Mobs within 40 blocks also lock on and attack</li>
-        <li>Players in Creative or Spectator mode are ignored</li>
-        <li>Pathfinds in short hops, so it works over long distances</li>
-      </ul>
-      <p class="note">Mobs only move in loaded chunks. Raise <em>Simulation Distance</em> to 13 or more in Video Settings to reach the full 200 blocks. On a multiplayer server, install it on the server.</p>
-      <p><a class="btn" href="downloads/minecraft-mob-probing-1.0.0.jar" download>Download v1.0.0</a></p>
+      <div id="mod-list" class="mod-list"></div>
+      <noscript><p class="panel">Turn on JavaScript to see the mod list, or grab the jars from the <a href="https://github.com/finlayharris888/minecraft-mods/tree/main/web/downloads">downloads folder</a>.</p></noscript>
     </section>
 
-    <section id="inventory-sorter" class="card">
-      <div class="card-head">
-        <h2>Inventory Sorter</h2>
-        <span class="tag">Quality of life &middot; Client-side</span>
+    <section id="install" class="section">
+      <div class="panel install">
+        <h2>How to install</h2>
+        <ol>
+          <li>Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> 0.20.1 or newer for Minecraft 26.3. Most launchers can do this for you.</li>
+          <li>Download <a href="https://modrinth.com/mod/fabric-api">Fabric API</a> for 26.3 and put it in your <code>mods</code> folder.</li>
+          <li>Download the mods you want from this page and put them in the same folder.</li>
+          <li>Launch the game with your Fabric profile.</li>
+        </ol>
+        <p class="hint">Found a bug or want a mod made? <a href="https://github.com/finlayharris888/minecraft-mods/issues">Open an issue on GitHub</a>.</p>
       </div>
-      <p>One click sorts your inventory, chests, barrels, ender chests and shulker boxes. It runs entirely on your own client with ordinary slot clicks, so it works on <strong>any server</strong> without the server installing anything.</p>
-      <ul>
-        <li>A <strong>Sort</strong> button on every chest, barrel and your inventory screen</li>
-        <li>Merges partial stacks, then sorts smartly in creative-menu order, so related items stay together (blocks, tools, combat, food and so on)</li>
-        <li>Keyboard shortcut: <kbd>R</kbd> sorts the container, <kbd>Shift</kbd> + <kbd>R</kbd> sorts your inventory (rebindable in Controls)</li>
-        <li>Clicks are spread over a few ticks so servers do not flag you for spam</li>
-        <li>Never touches your hotbar, armor or offhand</li>
-      </ul>
-      <p><a class="btn" href="downloads/inventory-sorter-1.0.0.jar" download>Download v1.0.0</a></p>
-    </section>
-
-    <section class="install">
-      <h2>How to install</h2>
-      <ol>
-        <li>Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> <strong>0.20.1</strong> or newer for Minecraft <strong>26.3</strong> (most launchers can do this for you).</li>
-        <li>Download <a href="https://modrinth.com/mod/fabric-api">Fabric API</a> for 26.3 and put it in your <code>mods</code> folder.</li>
-        <li>Download the mod jars above and put them in the same <code>mods</code> folder.</li>
-        <li>Start the game using your Fabric profile.</li>
-      </ol>
-      <p class="note">Requires Minecraft Java Edition 26.3 and Fabric API. These are early releases: if you hit a bug, please <a href="https://github.com/finlayharris888/minecraft-mods/issues">open an issue</a>.</p>
     </section>
   </main>
 
-  <footer class="wrap">
-    <p>Source code and issues on <a href="https://github.com/finlayharris888/minecraft-mods">GitHub</a>. MIT licensed.</p>
+  <footer class="bedrock">
+    <p>Pickaxe Lab mods are open source under the MIT license. <a href="https://github.com/finlayharris888/minecraft-mods">View the code on GitHub</a>.</p>
     <p class="small">Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
   </footer>
+
+  <script src="mods.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
